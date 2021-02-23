@@ -6,5 +6,6 @@ function getWord(word) {
     console.log(xhr.status);
     console.log(xhr.response);
   });
+
   xhr.send();
 }
