@@ -19,13 +19,13 @@ function getWord(word) {
   });
   xhr.send();
 }
-
 var xhrRandomWord = new XMLHttpRequest();
 xhrRandomWord.open('GET', 'https://random-word-api.herokuapp.com//word?number=1');
 xhrRandomWord.responseType = 'json';
 xhrRandomWord.addEventListener('load', function () {
-  console.log('xhrRandomWord.status: ', xhrRandomWord.status);
-  console.log('xhrRandomWord.response: ', xhrRandomWord.response);
+  console.log('xhrRandomWord.response[0]:', xhrRandomWord.response[0]);
+
+  $wordOfTheDay.textContent = xhrRandomWord.response[0];
 });
 xhrRandomWord.send();
 
@@ -33,14 +33,14 @@ var $homelink = document.querySelector('.home-link');
 var $homePage = document.querySelector('.homepage-container');
 var $wordPage = document.querySelector('.wotd-container');
 var $navBar = document.querySelector('.nav-bar-container');
-var $wotdbutton = document.querySelector('.wotd-button');
+var $wotdButton = document.querySelector('.wotd-button');
 
 function viewHomePage(event) {
   $homePage.className = 'homepage-container';
   $wordPage.className = 'wotd-container hidden';
   $navBar.className = 'nav-bar-container hidden';
 }
-
+var $wordOfTheDay = document.querySelector('.wotd');
 function viewWOTDPage(event) {
   $homePage.className = 'homepage-container hidden';
   $wordPage.className = 'wotd-container';
@@ -49,4 +49,4 @@ function viewWOTDPage(event) {
 }
 
 $homelink.addEventListener('click', viewHomePage);
-$wotdbutton.addEventListener('click', viewWOTDPage);
+$wotdButton.addEventListener('click', viewWOTDPage);
