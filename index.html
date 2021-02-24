@@ -9,47 +9,73 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="content">
-        <div class="row">
+  </header>
+  <main>
+    <div class="homepage-container" data-view="homepage">
+      <div class="row">
+        <div class="column">
           <div class="circle"></div>
           <div class="headings">
             <h1>Vocab.</h1>
             <p>expand your vocab with one word a day</p>
           </div>
         </div>
-      </div>
     </div>
-
-    <div class="container">
-      <div class="content">
+    <div class="row">
+      <div class="column">
         <div class="button-container">
-          <button class="main-button">WORD OF THE DAY</button>
+          <button class="wotd-button">WORD OF THE DAY</button>
         </div>
-         <div class="button-container">
-          <button class="main-button">WORD LIST</button>
+        <div class="button-container">
+          <button class="wordlist-button">WORD LIST</button>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="content">
+    <div class="row">
+      <div class="column">
           <form>
             <input id="search" type="text" name="search" required>
             <button type="submit" value="submit" class="search-button">SUBMIT</button>
           </form>
       </div>
     </div>
+  </div>
+  <div class="nav-bar-container hidden">
+    <div class="nav-bar">
+      <div class="nav-row">
+        <h2>Vocab.</h2>
+        <a class="home-link">HOME</a>
+      </div>
+    </div>
+  </div>
+  <div class="wotd-container hidden" data-view="word-of-the-day">
+    <div class="word-container">
+      <div class="row">
+        <h3>the word of the day:</h3>
+        <div class="rect-background">
+          <h2 class="wotd"></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <div class="button-container">
+          <button class="gray-button learn">LEARN IT</button>
+        </div>
+        <div class="button-container">
+          <button class="gray-button new-word">NEW WORD</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-
-
-  </header>
-  <main>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
