@@ -7,53 +7,21 @@
   display: none;
 }
 
-.container {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  color: #3b3b3b;
-  margin-bottom: 4.2rem;
-}
-
-.row {
-  width: 375px;
-  display: flex;
-  flex-direction: column;
-  margin: auto auto 3rem auto;
-}
-
-.circle {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #e7d8cf;
-  position: relative;
-  left: 20px;
-  top: 120px;
-  z-index: -1;
-}
-
-.headings {
-  margin-left: 4rem;
-  line-height: 0.5px;
-}
-
 h1 {
   font-weight: 500;
   font-size: 52px;
 }
 
-.button-container {
-  text-align: center;
-  padding: 0.5rem;
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
 }
 
-.main-button {
-  width: 200px;
-  height: 50px;
-  background-color: #3b3b3b;
-  border: none;
-  color: #fff;
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 form {
@@ -63,6 +31,65 @@ form {
 
 input {
   width: 225px;
+}
+
+.row {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #3b3b3b;
+  margin: 5rem 0;
+}
+
+.column {
+  width: 375px;
+
+  /* display: flex; */
+
+  /* flex-direction: column; */
+  margin: auto;
+
+  /* border: red solid; */
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #e7d8cf;
+  position: relative;
+  left: 20px;
+  top: 50px;
+  z-index: -1;
+}
+
+.headings {
+  width: fit-content;
+  position: relative;
+  left: 100px;
+  bottom: 70px;
+  line-height: 0.5px;
+
+  /* border: blueviolet solid; */
+}
+
+.button-container {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.main-button,
+.gray-button {
+  width: 200px;
+  height: 50px;
+  background-color: #3b3b3b;
+  border: none;
+  color: #fff;
+}
+
+.gray-button {
+  background-color: #e5e5e5;
+  color: black;
 }
 
 .search-button {
@@ -89,8 +116,15 @@ input {
   width: 100%;
 }
 
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 30px;
+.word-container {
+  width: 300px;
+  margin: auto;
+}
+
+.rect-background {
+  background-color: #3b3b3b;
+  color: #fff;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
 }
