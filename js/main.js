@@ -11,14 +11,22 @@ function getWord(word) {
 
 var $homelink = document.querySelector('.home-link');
 var $homePage = document.querySelector('.homepage-container');
-var $wordPage = document.querySelector('.wod-container');
+var $wordPage = document.querySelector('.wotd-container');
+var $navBar = document.querySelector('.nav-bar-container');
+var $wotdbutton = document.querySelector('.wotd-button');
 
-function viewHomepage(event) {
-  console.log('ok this works');
-  $homePage.className = 'homepage-container display';
-  $wordPage.className = 'wod-container hidden';
+function viewHomePage(event) {
+  $homePage.className = 'homepage-container';
+  $wordPage.className = 'wotd-container hidden';
+  $navBar.className = 'nav-bar-container hidden';
+}
+
+function viewWOTDPage(event) {
+  $homePage.className = 'homepage-container hidden';
+  $wordPage.className = 'wotd-container';
+  $navBar.className = 'nav-bar-container';
 
 }
 
-$homelink.addEventListener('click', viewHomepage)
-;
+$homelink.addEventListener('click', viewHomePage);
+$wotdbutton.addEventListener('click', viewWOTDPage);
