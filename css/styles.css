@@ -1,16 +1,25 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
 .container {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: 14px;
   color: #3b3b3b;
-  margin-bottom: 6rem;
+  margin-bottom: 4.2rem;
 }
 
-.content {
+.row {
   width: 375px;
   display: flex;
   flex-direction: column;
-  margin: auto auto 4rem auto;
+  margin: auto auto 3rem auto;
 }
 
 .circle {
@@ -62,4 +71,26 @@ input {
   background-color: #3b3b3b;
   border: none;
   color: #fff;
+}
+
+.nav-bar {
+  background-color: #3b3b3b;
+  color: #fff;
+  height: 50px;
+  display: flex;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
 }
