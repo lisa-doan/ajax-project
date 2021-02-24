@@ -43,13 +43,7 @@ input {
 
 .column {
   width: 375px;
-
-  /* display: flex; */
-
-  /* flex-direction: column; */
   margin: auto;
-
-  /* border: red solid; */
 }
 
 .circle {
@@ -69,8 +63,6 @@ input {
   left: 100px;
   bottom: 70px;
   line-height: 0.5px;
-
-  /* border: blueviolet solid; */
 }
 
 .button-container {
