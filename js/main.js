@@ -1,14 +1,9 @@
-// function getWord(randomWord) {
-//   var randomWord = $wordOfTheDay.textContent;
-//   var xhr = new XMLHttpRequest();
-//   xhr.open('GET', 'https://api.dictionaryapi.dev/api/v2/entries/en_US/' + randomWord);
-//   xhr.responseType = 'json';
-//   xhr.addEventListener('load', function () {
-//     console.log(xhr.status);
-//     console.log(xhr.response);
-//   });
-//   xhr.send();
-// }
+var $homelink = document.querySelector('.home-link');
+var $homePage = document.querySelector('.homepage-container');
+var $wordPage = document.querySelector('.wotd-container');
+var $navBar = document.querySelector('.nav-bar-container');
+var $wotdButton = document.querySelector('.wotd-button');
+var $newWordButton = document.querySelector('.new-word');
 
 function getRandomWord(event) {
   var xhrRandomWord = new XMLHttpRequest();
@@ -20,13 +15,6 @@ function getRandomWord(event) {
   });
   xhrRandomWord.send();
 }
-
-var $homelink = document.querySelector('.home-link');
-var $homePage = document.querySelector('.homepage-container');
-var $wordPage = document.querySelector('.wotd-container');
-var $navBar = document.querySelector('.nav-bar-container');
-var $wotdButton = document.querySelector('.wotd-button');
-var $newWordButton = document.querySelector('.new-word');
 
 function viewHomePage(event) {
   $homePage.className = 'homepage-container';
