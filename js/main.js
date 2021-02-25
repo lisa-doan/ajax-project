@@ -15,6 +15,7 @@ var $word = document.querySelector('.wotd-defintion');
 var $definition = document.querySelector('.definition');
 var $example = document.querySelector('.example');
 var $partOfSpeech = document.querySelector('.partOfSpeech');
+var $ul = document.querySelector('ul');
 
 getRandomWord();
 
@@ -80,7 +81,13 @@ function viewWordlistPage(event) {
 
 $saveButton.addEventListener('click', function (event) {
   viewWordlistPage();
-  console.log('checking....');
+  var currentWord = $wordOfTheDay.textContent;
+  console.log('currentWord: ', currentWord);
+
+  var $li = document.createElement('li');
+  $li.textContent = currentWord;
+  $ul.append($li);
+
 });
 
 $homelink.addEventListener('click', viewHomePage);
