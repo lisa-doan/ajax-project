@@ -15,7 +15,7 @@
   <header>
   </header>
   <main>
-    <div class="homepage-container" data-view="homepage-view">
+    <div class="homepage-container hidden" data-view="homepage-view">
       <div class="row">
         <div class="column">
           <div class="circle"></div>
@@ -45,7 +45,7 @@
     </div>
   </div>
 
-  <div class="nav-bar-container hidden">
+  <div class="nav-bar-container">
     <div class="nav-bar">
       <div class="nav-row">
         <h2>vocab.</h2>
@@ -77,25 +77,34 @@
 
    <div class="definition-container hidden" data-view="definition-view">
      <div class="gray-background">
-       <div class="definition-row">
+       <div class="white-background">
          <h2 class="wotd-defintion"></h2>
          <h3 class="partOfSpeech"></h3>
          <div class="definition-content">
-            <h3>definition</h3>
-            <p class="definition">Loading...</p>
+           <h3>definition</h3>
+           <p class="definition">Loading...</p>
          </div>
          <div class="definition-content">
-            <h3>example</h3>
-            <p class="example">Loading...</p>
+           <h3>example</h3>
+           <p class="example">Loading...</p>
          </div>
-
-       </div>
-       <div class="button-container">
-        <button class="pink-button save-button">SAVE</button>
-        <button class="pink-button exit-button">EXIT</button>
-      </div>
+        </div>
+        <div class="button-container">
+          <button class="pink-button save-button">SAVE</button>
+          <button class="pink-button exit-button">EXIT</button>
+        </div>
       </div>
     </div>
+
+   <div class="wordlist-container" data-view="wordlist-view">
+     <div class="gray-background">
+      <h2>word list</h2>
+      <div class="white-background">
+
+      </div>
+    </div>
+   </div>
+
 
 
 
