@@ -11,6 +11,7 @@ var $word = document.querySelector('.wotd-defintion');
 var $definition = document.querySelector('.definition');
 var $example = document.querySelector('.example');
 var $partOfSpeech = document.querySelector('.partOfSpeech');
+var $exitButton = document.querySelector('.exit-button');
 
 getRandomWord();
 
@@ -25,7 +26,7 @@ function getRandomWord(event) {
   xhrRandomWord.send();
 }
 
-function getDefintion(randomWord) {
+function getDefintion() {
   var randomWord = $wordOfTheDay.textContent;
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.dictionaryapi.dev/api/v2/entries/en_US/' + randomWord);
@@ -64,6 +65,7 @@ function viewDefinitionPage(event) {
 }
 
 $homelink.addEventListener('click', viewHomePage);
+$exitButton.addEventListener('click', viewHomePage);
 $wotdButton.addEventListener('click', viewWOTDPage);
 $newWordButton.addEventListener('click', getRandomWord);
 $learnItButton.addEventListener('click', viewDefinitionPage);
