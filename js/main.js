@@ -1,17 +1,20 @@
 var $homelink = document.querySelector('.home-link');
 var $homePage = document.querySelector('.homepage-container');
 var $wordPage = document.querySelector('.wotd-container');
+var $defintionPage = document.querySelector('.definition-container');
+var $wordlistPage = document.querySelector('.wordlist-container');
 var $navBar = document.querySelector('.nav-bar-container');
 var $wotdButton = document.querySelector('.wotd-button');
 var $newWordButton = document.querySelector('.new-word');
 var $learnItButton = document.querySelector('.learn-button');
-var $defintionPage = document.querySelector('.definition-container');
+var $exitButton = document.querySelector('.exit-button');
+var $saveButton = document.querySelector('.save-button');
+var $wordlistButton = document.querySelector('.wordlist-button');
 var $wordOfTheDay = document.querySelector('.wotd');
 var $word = document.querySelector('.wotd-defintion');
 var $definition = document.querySelector('.definition');
 var $example = document.querySelector('.example');
 var $partOfSpeech = document.querySelector('.partOfSpeech');
-var $exitButton = document.querySelector('.exit-button');
 
 getRandomWord();
 
@@ -47,6 +50,7 @@ function viewHomePage(event) {
   $wordPage.className = 'wotd-container hidden';
   $navBar.className = 'nav-bar-container hidden';
   $defintionPage.className = 'definition-container hidden';
+  $wordlistPage.className = 'wordlist-container hidden';
 }
 
 function viewWOTDPage(event) {
@@ -54,6 +58,7 @@ function viewWOTDPage(event) {
   $wordPage.className = 'wotd-container';
   $navBar.className = 'nav-bar-container';
   $defintionPage.className = 'definition-container hidden';
+  $wordlistPage.className = 'wordlist-container hidden';
 }
 
 function viewDefinitionPage(event) {
@@ -61,11 +66,26 @@ function viewDefinitionPage(event) {
   $wordPage.className = 'wotd-container hidden';
   $navBar.className = 'nav-bar-container';
   $defintionPage.className = 'definition-container';
+  $wordlistPage.className = 'wordlist-container hidden';
   getDefintion();
 }
+
+function viewWordlistPage(event) {
+  $homePage.className = 'homepage-container hidden';
+  $wordPage.className = 'wotd-container hidden';
+  $navBar.className = 'nav-bar-container';
+  $defintionPage.className = 'definition-container hidden';
+  $wordlistPage.className = 'wordlist-container';
+}
+
+$saveButton.addEventListener('click', function (event) {
+  viewWordlistPage();
+  console.log('checking....');
+});
 
 $homelink.addEventListener('click', viewHomePage);
 $exitButton.addEventListener('click', viewHomePage);
 $wotdButton.addEventListener('click', viewWOTDPage);
 $newWordButton.addEventListener('click', getRandomWord);
 $learnItButton.addEventListener('click', viewDefinitionPage);
+$wordlistButton.addEventListener('click', viewWordlistPage);
