@@ -33,6 +33,10 @@ input {
   width: 225px;
 }
 
+p {
+  font-size: 14px;
+}
+
 .row {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
@@ -85,6 +89,14 @@ input {
   color: black;
 }
 
+.pink-button {
+  background-color: #e7d8cf;
+  width: 100px;
+  height: 36px;
+  border: none;
+  margin: 10px;
+}
+
 .search-button {
   width: 75px;
   height: 20px;
@@ -120,4 +132,24 @@ input {
   height: 150px;
   line-height: 150px;
   text-align: center;
+}
+
+.gray-background {
+  background-color: #f8f4f4;
+  height: 100vh;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.definition-row {
+  background-color: #fff;
+  height: 450px;
+}
+
+.definition-content {
+  text-align: left;
+  padding: 1rem;
+  background-color: #fff;
+
+  /* border: salmon solid; */
 }
