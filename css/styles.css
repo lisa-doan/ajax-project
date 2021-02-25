@@ -141,7 +141,7 @@ p {
   text-align: center;
 }
 
-.definition-row {
+.white-background {
   background-color: #fff;
   height: 450px;
 }
@@ -150,6 +150,4 @@ p {
   text-align: left;
   padding: 1rem;
   background-color: #fff;
-
-  /* border: salmon solid; */
 }
