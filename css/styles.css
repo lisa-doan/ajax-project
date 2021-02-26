@@ -30,7 +30,8 @@ form {
 }
 
 input {
-  width: 225px;
+  width: 200px;
+  height: 20px;
 }
 
 p {
@@ -143,10 +144,10 @@ p {
 
 .white-background {
   background-color: #fff;
-  height: 450px;
+  height: 400px;
 }
 
-.definition-content {
+.content {
   text-align: left;
   padding: 1rem;
   background-color: #fff;
