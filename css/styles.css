@@ -30,7 +30,8 @@ form {
 }
 
 input {
-  width: 225px;
+  width: 200px;
+  height: 20px;
 }
 
 p {
@@ -141,15 +142,13 @@ p {
   text-align: center;
 }
 
-.definition-row {
+.white-background {
   background-color: #fff;
-  height: 450px;
+  height: 425px;
 }
 
-.definition-content {
+.content {
   text-align: left;
   padding: 1rem;
   background-color: #fff;
-
-  /* border: salmon solid; */
 }
