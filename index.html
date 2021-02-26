@@ -13,19 +13,9 @@
 </head>
 <body>
   <header>
-    <div class="nav-bar-container hidden">
-      <div class="nav-bar">
-        <div class="nav-row">
-          <h2>vocab.</h2>
-          <a class="home-link">HOME</a>
-        </div>
-      </div>
-    </div>
   </header>
-
   <main>
-
-    <div class="homepage-container hidden" data-view="homepage-view">
+    <div class="homepage-container" data-view="homepage-view">
       <div class="row">
         <div class="column">
           <div class="circle"></div>
@@ -34,60 +24,70 @@
             <p>expand your vocab with one word a day</p>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column">
-          <div class="button-container">
-            <button class="wotd-button">WORD OF THE DAY</button>
-          </div>
-          <div class="button-container">
-            <button class="wordlist-button">WORD LIST</button>
-          </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="button-container">
+          <button class="wotd-button">WORD OF THE DAY</button>
+        </div>
+        <div class="button-container">
+          <button class="wordlist-button">WORD LIST</button>
         </div>
       </div>
-      <div class="row">
-        <div class="column">
+    </div>
+    <div class="row">
+      <div class="column">
           <form>
             <input id="search" type="text" name="search" required>
             <button type="submit" class="search-button">SEARCH</button>
           </form>
-        </div>
       </div>
     </div>
+  </div>
 
-    <div class="wotd-container hidden" data-view="wotd-view">
-      <div class="word-container">
-        <div class="row">
-          <h3>the word of the day:</h3>
-          <div class="rect-background">
-            <h2 class="wotd"></h2>
-          </div>
-        </div>
+  <div class="nav-bar-container hidden">
+    <div class="nav-bar">
+      <div class="nav-row">
+        <h2>vocab.</h2>
+        <a class="home-link">HOME</a>
       </div>
+    </div>
+  </div>
+
+  <div class="wotd-container hidden" data-view="wotd-view">
+    <div class="word-container">
       <div class="row">
-        <div class="column">
-          <div class="button-container">
-            <button class="gray-button learn-button">LEARN IT</button>
-          </div>
-          <div class="button-container">
-            <button class="gray-button new-word">NEW WORD</button>
-          </div>
+        <h3>the word of the day:</h3>
+        <div class="rect-background">
+          <h2 class="wotd"></h2>
         </div>
       </div>
     </div>
-    <div class="definition-container hidden" data-view="definition-view">
-      <div class="gray-background">
-        <h2 class="word-defintion"></h2>
-        <div class="white-background">
-          <h3 class="partOfSpeech"></h3>
-          <div class="content">
-            <h3>definition</h3>
-            <p class="definition">Loading...</p>
-          </div>
-          <div class="content">
-            <h3>example</h3>
-            <p class="example">Loading...</p>
-          </div>
+    <div class="row">
+      <div class="column">
+        <div class="button-container">
+          <button class="gray-button learn-button">LEARN IT</button>
+        </div>
+        <div class="button-container">
+          <button class="gray-button new-word">NEW WORD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="definition-container hidden" data-view="definition-view">
+     <div class="gray-background">
+       <div class="white-background">
+         <h2 class="word-defintion"></h2>
+         <h3 class="partOfSpeech"></h3>
+         <div class="content">
+           <h3>definition</h3>
+           <p class="definition">Loading...</p>
+         </div>
+         <div class="content">
+           <h3>example</h3>
+           <p class="example">Loading...</p>
+         </div>
         </div>
         <div class="button-container">
           <button class="pink-button save-button">SAVE</button>
@@ -96,25 +96,25 @@
       </div>
     </div>
 
-    <div class="wordlist-container hidden" data-view="wordlist-view">
-      <div class="gray-background">
-        <h2>word list</h2>
-        <div class="white-background">
-          <div class="content">
-            <ul></ul>
-          </div>
-        </div>
+   <div class="wordlist-container hidden" data-view="wordlist-view">
+     <div class="gray-background">
+      <h2>word list</h2>
+      <div class="white-background">
+        <div class="content">
+        <ul></ul>
+      </div>
+      </div>
         <div class="button-container">
           <button class="pink-button exit-button">EXIT</button>
         </div>
-      </div>
     </div>
 
-    <div class="modal-container">
+   </div>
+
+
+    <div class="modal-container hidden">
       <div class="modal-content">
         <p>sorry! no definitions found... please try again!</p>
-      <!-- </div> -->
-      <!-- <div class="button-container"> -->
         <button class="pink-button exit-button">EXIT</button>
       </div>
     </div>
