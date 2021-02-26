@@ -7,7 +7,7 @@ var $navBar = document.querySelector('.nav-bar-container');
 var $wotdButton = document.querySelector('.wotd-button');
 var $newWordButton = document.querySelector('.new-word');
 var $learnItButton = document.querySelector('.learn-button');
-var $exitButton = document.querySelector('.exit-button');
+var $exitButton = document.querySelectorAll('.exit-button');
 var $saveButton = document.querySelector('.save-button');
 var $wordlistButton = document.querySelector('.wordlist-button');
 var $wordOfTheDay = document.querySelector('.wotd');
@@ -16,9 +16,7 @@ var $definition = document.querySelector('.definition');
 var $example = document.querySelector('.example');
 var $partOfSpeech = document.querySelector('.partOfSpeech');
 var $ul = document.querySelector('ul');
-
 getRandomWord();
-
 function getRandomWord(event) {
   var xhrRandomWord = new XMLHttpRequest();
   xhrRandomWord.open('GET', 'https://random-word-api.herokuapp.com/word?number=1');
@@ -29,7 +27,6 @@ function getRandomWord(event) {
   });
   xhrRandomWord.send();
 }
-
 function getDefintion() {
   var randomWord = $wordOfTheDay.textContent;
   var xhr = new XMLHttpRequest();
@@ -45,7 +42,6 @@ function getDefintion() {
   });
   xhr.send();
 }
-
 function viewHomePage(event) {
   $homePage.className = 'homepage-container';
   $wordPage.className = 'wotd-container hidden';
@@ -53,7 +49,6 @@ function viewHomePage(event) {
   $defintionPage.className = 'definition-container hidden';
   $wordlistPage.className = 'wordlist-container hidden';
 }
-
 function viewWOTDPage(event) {
   $homePage.className = 'homepage-container hidden';
   $wordPage.className = 'wotd-container';
@@ -61,7 +56,6 @@ function viewWOTDPage(event) {
   $defintionPage.className = 'definition-container hidden';
   $wordlistPage.className = 'wordlist-container hidden';
 }
-
 function viewDefinitionPage(event) {
   $homePage.className = 'homepage-container hidden';
   $wordPage.className = 'wotd-container hidden';
@@ -70,7 +64,6 @@ function viewDefinitionPage(event) {
   $wordlistPage.className = 'wordlist-container hidden';
   getDefintion();
 }
-
 function viewWordlistPage(event) {
   $homePage.className = 'homepage-container hidden';
   $wordPage.className = 'wotd-container hidden';
@@ -78,7 +71,6 @@ function viewWordlistPage(event) {
   $defintionPage.className = 'definition-container hidden';
   $wordlistPage.className = 'wordlist-container';
 }
-
 $saveButton.addEventListener('click', function (event) {
   viewWordlistPage();
   var currentWord = $wordOfTheDay.textContent;
@@ -89,25 +81,23 @@ $saveButton.addEventListener('click', function (event) {
   data.entries.unshift(input);
   var newItem = createList(currentWord);
   $ul.prepend(newItem);
-
 });
-
 function createList(currentWord) {
   var $li = document.createElement('li');
   $li.textContent = currentWord;
   return $li;
 }
-
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     var addWord = createList(data.entries[i].word);
     $ul.append(addWord);
   }
 });
-
 $homelink.addEventListener('click', viewHomePage);
-$exitButton.addEventListener('click', viewHomePage);
 $wotdButton.addEventListener('click', viewWOTDPage);
 $newWordButton.addEventListener('click', getRandomWord);
 $learnItButton.addEventListener('click', viewDefinitionPage);
 $wordlistButton.addEventListener('click', viewWordlistPage);
+$exitButton.forEach(function (item) {
+  item.addEventListener('click', viewHomePage);
+});
