@@ -27,7 +27,6 @@ function getRandomWord(event) {
   xhrRandomWord.addEventListener('load', function () {
     wordOfTheDay = xhrRandomWord.response[0];
     $wordOfTheDay.textContent = xhrRandomWord.response[0];
-    $word.textContent = xhrRandomWord.response[0];
   });
   xhrRandomWord.send();
 }
@@ -43,6 +42,7 @@ function getDefintion(word) {
     $definition.textContent = definition;
     $example.textContent = example;
     $partOfSpeech.textContent = partOfSpeech;
+    $word.textContent = word;
   });
   xhr.send();
 }
@@ -83,7 +83,7 @@ function viewWordlistPage(event) {
 
 $saveButton.addEventListener('click', function (event) {
   viewWordlistPage();
-  var currentWord = $wordOfTheDay.textContent;
+  var currentWord = $word.textContent;
   var input = {};
   input.word = currentWord;
   input.idNum = data.nextIdNum;
@@ -121,4 +121,12 @@ $exitButton.forEach(function (item) {
 });
 $learnItButton.addEventListener('click', function (word) {
   viewDefinitionPage(wordOfTheDay);
+});
+
+var $form = document.querySelector('form');
+$form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  var searchedWord = event.target.search.value;
+  viewDefinitionPage(searchedWord);
+  $form.reset();
 });
