@@ -79,16 +79,11 @@ function viewWordlistPage(event) {
   $wordlistPage.className = 'wordlist-container';
 }
 
-$saveButton.addEventListener('click', function (event) {
-  viewWordlistPage();
-  var currentWord = $wordOfTheDay.textContent;
-  console.log('currentWord: ', currentWord);
-
+function createList(currentWord) {
   var $li = document.createElement('li');
   $li.textContent = currentWord;
-  $ul.append($li);
-
-});
+  return $li;
+}
 
 $homelink.addEventListener('click', viewHomePage);
 $exitButton.addEventListener('click', viewHomePage);
