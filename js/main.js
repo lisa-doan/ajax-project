@@ -98,6 +98,13 @@ function createList(currentWord) {
   return $li;
 }
 
+window.addEventListener('DOMContentLoaded', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    var addWord = createList(data.entries[i].word);
+    $ul.append(addWord);
+  }
+});
+
 $homelink.addEventListener('click', viewHomePage);
 $exitButton.addEventListener('click', viewHomePage);
 $wotdButton.addEventListener('click', viewWOTDPage);
