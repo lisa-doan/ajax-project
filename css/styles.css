@@ -143,8 +143,6 @@ p {
   height: 100vh;
   padding: 3rem 1.5rem;
   text-align: center;
-
-  /* padding-top: 50px; */
 }
 
 .white-background {
@@ -160,7 +158,7 @@ p {
   background-color: #fff;
 }
 
-.modal-container {
+.modal-container.display {
   display: flex;
   position: fixed;
   z-index: 1;
