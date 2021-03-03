@@ -9,7 +9,7 @@ var $newWordButton = document.querySelector('.new-word');
 var $learnItButton = document.querySelector('.learn-button');
 var $exitButton = document.querySelectorAll('.exit-button');
 var $saveButton = document.querySelector('.save-button');
-var $wordlistButton = document.querySelector('.wordlist-button');
+var $wordlistButton = document.querySelectorAll('.wordlist-button');
 var $wordOfTheDay = document.querySelector('.wotd');
 var $word = document.querySelector('.word-defintion');
 var $definition = document.querySelector('.definition');
@@ -17,6 +17,7 @@ var $example = document.querySelector('.example');
 var $partOfSpeech = document.querySelector('.partOfSpeech');
 var $ul = document.querySelector('ul');
 var $modal = document.querySelector('.modal-container');
+var $form = document.querySelector('form');
 var wordOfTheDay;
 
 getRandomWord();
@@ -76,6 +77,8 @@ function viewDefinitionPage(event) {
   $navBar.className = 'nav-bar-container';
   $defintionPage.className = 'definition-container';
   $wordlistPage.className = 'wordlist-container hidden';
+  $saveButton.className = 'pink-button save-button';
+  $deleteButton.className = 'pink-button delete-button hidden';
   getDefintion(event);
 }
 
@@ -85,6 +88,14 @@ function viewWordlistPage(event) {
   $navBar.className = 'nav-bar-container';
   $defintionPage.className = 'definition-container hidden';
   $wordlistPage.className = 'wordlist-container';
+}
+
+function createList(currentWord) {
+  var $li = document.createElement('li');
+  $li.setAttribute('class', 'trashIcon');
+  $li.textContent = currentWord;
+
+  return $li;
 }
 
 $saveButton.addEventListener('click', function (event) {
@@ -99,12 +110,6 @@ $saveButton.addEventListener('click', function (event) {
   $ul.prepend(newItem);
 });
 
-function createList(currentWord) {
-  var $li = document.createElement('li');
-  $li.textContent = currentWord;
-  return $li;
-}
-
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.words.length; i++) {
     var addWord = createList(data.words[i].word);
@@ -116,24 +121,34 @@ $ul.addEventListener('click', function (event) {
   var selectedWord = event.target.textContent;
   $word.textContent = selectedWord;
   viewDefinitionPage(selectedWord);
+  $saveButton.className = 'pink-button save-button hidden';
+  $deleteButton.className = 'pink-button delete-button';
 });
 
-$homelink.addEventListener('click', viewHomePage);
-$wotdButton.addEventListener('click', viewWOTDPage);
-$newWordButton.addEventListener('click', getRandomWord);
-$wordlistButton.addEventListener('click', viewWordlistPage);
+var $deleteButton = document.querySelector('.delete-button');
+// $deleteButton.addEventListener('click', function (event) {
+//   console.log('delete button clicked');
+// });
 
-$exitButton.forEach(function (item) {
-  item.addEventListener('click', viewHomePage);
-});
-$learnItButton.addEventListener('click', function (word) {
-  viewDefinitionPage(wordOfTheDay);
-});
-
-var $form = document.querySelector('form');
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
   var searchedWord = event.target.search.value;
   viewDefinitionPage(searchedWord);
   $form.reset();
 });
+
+$wordlistButton.forEach(function (item) {
+  item.addEventListener('click', viewWordlistPage);
+});
+
+$exitButton.forEach(function (item) {
+  item.addEventListener('click', viewHomePage);
+});
+
+$learnItButton.addEventListener('click', function (word) {
+  viewDefinitionPage(wordOfTheDay);
+});
+
+$homelink.addEventListener('click', viewHomePage);
+$wotdButton.addEventListener('click', viewWOTDPage);
+$newWordButton.addEventListener('click', getRandomWord);
