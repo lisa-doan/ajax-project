@@ -40,6 +40,8 @@ function getDefintion(word) {
   xhr.addEventListener('load', function () {
     if (xhr.response.title === 'No Definitions Found') {
       $modal.className = 'modal-container display';
+      $yesButton.className = 'pink-button yes-button hidden';
+      $modalMessage.textContent = 'Sorry, no definitions found. Please try again!';
     } else {
       var definition = xhr.response[0].meanings[0].definitions[0].definition;
       var example = xhr.response[0].meanings[0].definitions[0].example;
@@ -92,9 +94,8 @@ function viewWordlistPage(event) {
 
 function createList(currentWord) {
   var $li = document.createElement('li');
-  $li.setAttribute('class', 'trashIcon');
+  $li.setAttribute('id', currentWord);
   $li.textContent = currentWord;
-
   return $li;
 }
 
@@ -126,9 +127,33 @@ $ul.addEventListener('click', function (event) {
 });
 
 var $deleteButton = document.querySelector('.delete-button');
-// $deleteButton.addEventListener('click', function (event) {
-//   console.log('delete button clicked');
-// });
+var $yesButton = document.querySelector('.yes-button');
+var $modalMessage = document.querySelector('.modal-message');
+$deleteButton.addEventListener('click', confirmDelete);
+$yesButton.addEventListener('click', test);
+
+function confirmDelete(currentWord) {
+  $modal.className = 'modal-container display';
+  $yesButton.className = 'pink-button yes-button';
+  $modalMessage.textContent = 'Are you sure you want to delete?';
+}
+
+function test() {
+  $modal.className = 'modal-container display hidden';
+  viewWordlistPage();
+  var targetWord = $word.textContent;
+  var currentListWord = $ul.querySelectorAll('li');
+  for (var i = 0; i < currentListWord.length; i++) {
+    if (currentListWord[i].id === targetWord) {
+      currentListWord[i].remove();
+    }
+  }
+  for (var j = 0; j < data.words.length; j++) {
+    if (data.words[j].word === targetWord) {
+      data.words.splice(j, 1);
+    }
+  }
+}
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
