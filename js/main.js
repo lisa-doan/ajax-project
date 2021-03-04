@@ -96,9 +96,13 @@ function viewWordlistPage() {
 }
 
 function createList(currentWord) {
-  var $li = document.createElement('li');
-  $li.setAttribute('id', currentWord);
-  $li.textContent = currentWord;
+  for (var i = 0; i < data.words.length; i++) {
+    if (data.words[i].word === currentWord) {
+      var $li = document.createElement('li');
+      $li.setAttribute('id', data.words[i].idNum);
+      $li.textContent = currentWord;
+    }
+  }
   return $li;
 }
 
@@ -114,7 +118,7 @@ function deleteWord() {
   var targetWord = $word.textContent;
   var currentListWord = $ul.querySelectorAll('li');
   for (var i = 0; i < currentListWord.length; i++) {
-    if (currentListWord[i].id === targetWord) {
+    if (currentListWord[i].textContent === targetWord) {
       currentListWord[i].remove();
     }
   }
@@ -126,6 +130,16 @@ function deleteWord() {
 }
 
 function addWordtoList() {
+  var targetWord = $word.textContent;
+  var currentListWord = $ul.querySelectorAll('li');
+  for (var i = 0; i < currentListWord.length; i++) {
+    if (currentListWord[i].textContent === targetWord) {
+      $modal.className = 'modal-container display';
+      $yesButton.className = 'pink-button yes-button hidden';
+      $modalMessage.textContent = 'You already saved this word!';
+      return;
+    }
+  }
   viewWordlistPage();
   var currentWord = $word.textContent;
   var input = {};
@@ -136,6 +150,7 @@ function addWordtoList() {
   var newItem = createList(currentWord);
   $ul.prepend(newItem);
 }
+var $id = document.getElementById('n/a');
 
 function viewSelectedWordDefinition() {
   var selectedWord = event.target.textContent;
@@ -143,6 +158,12 @@ function viewSelectedWordDefinition() {
   viewDefinitionPage(selectedWord);
   $saveButton.className = 'pink-button save-button hidden';
   $deleteButton.className = 'pink-button delete-button';
+  for (var i = 0; i < data.words.length; i++) {
+    if (selectedWord === data.words[i].word) {
+      $id.id = data.words[i].idNum;
+    }
+  }
+
 }
 
 $form.addEventListener('submit', function (event) {
