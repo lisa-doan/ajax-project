@@ -75,9 +75,7 @@ p {
   padding: 0.5rem;
 }
 
-.wotd-button,
-.wordlist-button,
-.gray-button {
+.darkgray-button {
   width: 200px;
   height: 50px;
   background-color: #3b3b3b;
@@ -86,7 +84,10 @@ p {
 }
 
 .gray-button {
+  width: 200px;
+  height: 50px;
   background-color: #e5e5e5;
+  border: none;
   color: black;
 }
 
@@ -139,7 +140,7 @@ p {
 }
 
 .gray-background {
-  background-color: #f8f4f4;
+  background-color: #f9f9f9;
   height: 100vh;
   padding: 3rem 1.5rem;
   text-align: center;
@@ -182,12 +183,14 @@ p {
 
 .modal-content {
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 25% auto;
+  margin: auto;
   padding: 20px;
   width: 350px;
   height: 175px;
+  text-align: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
 }

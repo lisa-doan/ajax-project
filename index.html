@@ -10,9 +10,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
   <header>
+    <div class="nav-bar-container hidden">
+      <div class="nav-bar">
+        <div class="nav-row">
+          <h2>vocab.</h2>
+          <a class="home-link">HOME</a>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
     <div class="homepage-container" data-view="homepage-view">
@@ -28,10 +39,10 @@
     <div class="row">
       <div class="column">
         <div class="button-container">
-          <button class="wotd-button">WORD OF THE DAY</button>
+          <button class="darkgray-button wotd-button">WORD OF THE DAY</button>
         </div>
         <div class="button-container">
-          <button class="wordlist-button">WORD LIST</button>
+          <button class="darkgray-button wordlist-button">WORD LIST</button>
         </div>
       </div>
     </div>
@@ -41,15 +52,6 @@
             <input id="search" type="text" name="search" required>
             <button type="submit" class="search-button">SEARCH</button>
           </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="nav-bar-container hidden">
-    <div class="nav-bar">
-      <div class="nav-row">
-        <h2>vocab.</h2>
-        <a class="home-link">HOME</a>
       </div>
     </div>
   </div>
@@ -77,8 +79,8 @@
 
    <div class="definition-container hidden" data-view="definition-view">
      <div class="gray-background">
+       <h2 class="word-defintion"></h2>
        <div class="white-background">
-         <h2 class="word-defintion"></h2>
          <h3 class="partOfSpeech"></h3>
          <div class="content">
            <h3>definition</h3>
@@ -91,36 +93,36 @@
         </div>
         <div class="button-container">
           <button class="pink-button save-button">SAVE</button>
-          <button class="pink-button exit-button">EXIT</button>
+          <button class="pink-button delete-button hidden">DELETE</button>
+          <button class="pink-button wordlist-button">WORD LIST</button>
         </div>
       </div>
     </div>
 
    <div class="wordlist-container hidden" data-view="wordlist-view">
      <div class="gray-background">
-      <h2>word list</h2>
-      <div class="white-background">
-        <div class="content">
-        <ul></ul>
-      </div>
-      </div>
+       <h2>word list</h2>
+       <div class="white-background">
+         <div class="content">
+           <ul></ul>
+        </div>
+        </div>
         <div class="button-container">
           <button class="pink-button exit-button">EXIT</button>
         </div>
     </div>
-
    </div>
-
 
     <div class="modal-container hidden">
       <div class="modal-content">
-        <p>sorry, no definitions found... please try again!</p>
-        <button class="pink-button exit-button">EXIT</button>
+        <div class="right">
+        <button class="exit-button">x</button>
+        </div>
+        <p class="modal-message"></p>
+        <button class="pink-button yes-button hidden">YES</button>
       </div>
     </div>
-
   </main>
-
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
