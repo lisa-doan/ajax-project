@@ -7,21 +7,15 @@
   display: none;
 }
 
-h1 {
-  font-weight: 500;
-  font-size: 52px;
-}
-
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 30px;
-}
-
+h1,
+h2,
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+}
+
+h1 {
+  font-size: 48px;
 }
 
 form {
@@ -36,6 +30,11 @@ input {
 
 p {
   font-size: 14px;
+}
+
+a,
+li {
+  cursor: pointer;
 }
 
 .row {
@@ -81,6 +80,7 @@ p {
   background-color: #3b3b3b;
   border: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .gray-button {
@@ -89,6 +89,14 @@ p {
   background-color: #e5e5e5;
   border: none;
   color: black;
+  cursor: pointer;
+}
+
+.exit-button {
+  background-color: white;
+  border: none;
+  color: #3b3b3b;
+  cursor: pointer;
 }
 
 .pink-button {
@@ -97,6 +105,7 @@ p {
   height: 36px;
   border: none;
   margin: 10px;
+  cursor: pointer;
 }
 
 .search-button {
@@ -105,6 +114,7 @@ p {
   background-color: #3b3b3b;
   border: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .nav-bar {
