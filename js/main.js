@@ -21,7 +21,6 @@ var $ul = document.querySelector('ul');
 var $modal = document.querySelector('.modal-container');
 var $form = document.querySelector('form');
 var $modalMessage = document.querySelector('.modal-message');
-var $id = document.getElementById('n/a');
 var wordOfTheDay;
 
 getRandomWord();
@@ -97,13 +96,8 @@ function viewWordlistPage() {
 }
 
 function createList(currentWord) {
-  for (var i = 0; i < data.words.length; i++) {
-    if (data.words[i].word === currentWord) {
-      var $li = document.createElement('li');
-      $li.setAttribute('id', data.words[i].idNum);
-      $li.textContent = currentWord;
-    }
-  }
+  var $li = document.createElement('li');
+  $li.textContent = currentWord;
   return $li;
 }
 
@@ -158,11 +152,6 @@ function viewSelectedWordDefinition() {
   viewDefinitionPage(selectedWord);
   $saveButton.className = 'pink-button save-button hidden';
   $deleteButton.className = 'pink-button delete-button';
-  for (var i = 0; i < data.words.length; i++) {
-    if (selectedWord === data.words[i].word) {
-      $id.id = data.words[i].idNum;
-    }
-  }
 }
 
 $form.addEventListener('submit', function (event) {
