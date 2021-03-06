@@ -7,65 +7,55 @@
   display: none;
 }
 
-h1 {
-  font-weight: 500;
-  font-size: 52px;
+body {
+  background-color: #fff;
+  height: 100vh;
+  font-weight: 300;
+  color: #3b3b3b;
 }
 
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 30px;
-}
-
+h1,
+h2,
 h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-}
-
-form {
-  margin-top: 1.5rem;
-  text-align: center;
 }
 
 input {
   width: 200px;
-  height: 20px;
+  height: 22px;
 }
 
-p {
-  font-size: 14px;
+a,
+li {
+  cursor: pointer;
 }
 
 .row {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  color: #3b3b3b;
   margin: 5rem 0;
+  text-align: center;
 }
 
 .column {
-  width: 375px;
+  width: 370px;
   margin: auto;
+  text-align: left;
 }
 
 .circle {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background-color: #e7d8cf;
   position: relative;
-  left: 20px;
-  top: 50px;
+  left: 2rem;
+  top: 2rem;
   z-index: -1;
 }
 
 .headings {
-  width: fit-content;
   position: relative;
-  left: 100px;
+  width: 290px;
+  left: 80px;
   bottom: 70px;
   line-height: 0.5px;
 }
@@ -75,36 +65,44 @@ p {
   padding: 0.5rem;
 }
 
-.darkgray-button {
+.darkgray-button,
+.gray-button,
+.exit-button,
+.pink-button,
+.search-button {
+  border: none;
+  cursor: pointer;
   width: 200px;
   height: 50px;
+}
+
+.darkgray-button {
   background-color: #3b3b3b;
-  border: none;
   color: #fff;
 }
 
 .gray-button {
-  width: 200px;
-  height: 50px;
   background-color: #e5e5e5;
-  border: none;
   color: black;
+}
+
+.search-button {
+  width: 75px;
+  height: 20px;
+}
+
+.exit-button {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  color: #3b3b3b;
 }
 
 .pink-button {
   background-color: #e7d8cf;
   width: 100px;
   height: 36px;
-  border: none;
   margin: 10px;
-}
-
-.search-button {
-  width: 75px;
-  height: 20px;
-  background-color: #3b3b3b;
-  border: none;
-  color: #fff;
 }
 
 .nav-bar {
@@ -141,7 +139,7 @@ p {
 
 .gray-background {
   background-color: #f9f9f9;
-  height: 100vh;
+  height: 100vmax;
   padding: 3rem 1.5rem;
   text-align: center;
 }
@@ -193,4 +191,12 @@ p {
 .right {
   display: flex;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
 }

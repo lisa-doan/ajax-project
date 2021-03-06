@@ -22,6 +22,7 @@ var $modal = document.querySelector('.modal-container');
 var $form = document.querySelector('form');
 var $modalMessage = document.querySelector('.modal-message');
 var wordOfTheDay;
+var searchedWord;
 
 getRandomWord();
 
@@ -30,6 +31,7 @@ function getRandomWord() {
   xhrRandomWord.open('GET', 'https://random-word-api.herokuapp.com/word?number=1');
   xhrRandomWord.responseType = 'json';
   xhrRandomWord.addEventListener('load', function () {
+    getDefintion(xhrRandomWord.response[0]);
     wordOfTheDay = xhrRandomWord.response[0];
     $wordOfTheDay.textContent = xhrRandomWord.response[0];
   });
@@ -41,7 +43,10 @@ function getDefintion(word) {
   xhr.open('GET', 'https://api.dictionaryapi.dev/api/v2/entries/en_US/' + word);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    if (xhr.response.title === 'No Definitions Found') {
+    if (word === wordOfTheDay && (!Array.isArray(xhr.response) || xhr.response[0].meanings.length === 0)) {
+      getRandomWord();
+    }
+    if (word === searchedWord && 'title' in xhr.response) {
       $modal.className = 'modal-container display';
       $yesButton.className = 'pink-button yes-button hidden';
       $modalMessage.textContent = 'Sorry, no definitions found. Please try again!';
@@ -156,7 +161,8 @@ function viewSelectedWordDefinition() {
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
-  var searchedWord = event.target.search.value;
+  // var searchedWord = event.target.search.value;
+  searchedWord = event.target.search.value;
   viewDefinitionPage(searchedWord);
   $form.reset();
 });
