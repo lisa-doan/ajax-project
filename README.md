@@ -2,7 +2,7 @@
 A dynamic application for users to expand their vocabulary with one word a day.
 
 ## Live Demo
-Start learning here: https://lisa-doan.github.io/vocab-ajax/
+Start learning here: https://lisa-doan.github.io/vocab/
 
 ## Technologies Used
 * HTML5
